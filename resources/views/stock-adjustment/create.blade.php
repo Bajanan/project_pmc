@@ -183,11 +183,11 @@
 
     $.ajax({
         method: 'POST',
-        url: '/stock-adjustments/filter-batches', // Replace with your route URL
+        url: '/stock-adjustments/filter-batches', 
         data: {'Product': product } ,
         dataType: "json",
         headers: {
-            'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+            'X-CSRF-TOKEN': token 
         },
         success: function(response) {
             var data = "";
@@ -201,7 +201,7 @@
 
         },
         error: function(error) {
-            // Handle error
+            
 
         }
     });
@@ -216,11 +216,11 @@ var token = $('#token').val();
 
 $.ajax({
         method: 'POST',
-        url: '/stock-adjustments/batch-details', // Replace with your route URL
+        url: '/stock-adjustments/batch-details', 
         data: {'Batch': batch } ,
         dataType: "json",
         headers: {
-            'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+            'X-CSRF-TOKEN': token 
         },
         success: function(response) {
 
@@ -233,7 +233,7 @@ $.ajax({
 
         },
         error: function(error) {
-            // Handle error
+            
 
         }
     });

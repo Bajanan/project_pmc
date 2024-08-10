@@ -170,11 +170,11 @@ function filterBrands(){
 
        $.ajax({
         method: 'POST',
-        url: '/report/filter-brands', // Replace with your route URL
+        url: '/report/filter-brands', 
         data: {'Supplier':supplier } ,
         dataType: "json",
         headers: {
-            'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+            'X-CSRF-TOKEN': token 
         },
         success: function(response) {
             console.log(response);

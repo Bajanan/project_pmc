@@ -493,11 +493,11 @@
 
             $.ajax({
         method: 'POST',
-        url: '/service-billing/service-price', // Replace with your route URL
+        url: '/service-billing/service-price', 
         data: {'Service':service } ,
         dataType: "json",
         headers: {
-            'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+            'X-CSRF-TOKEN': token 
         },
         success: function(response) {
             // console.log(response.price);
@@ -518,7 +518,7 @@
 
         },
         error: function(error) {
-            // Handle error
+            
 
         }
     });
@@ -535,11 +535,11 @@ var token = $('#token').val();
 
 $.ajax({
         method: 'POST',
-        url: '/service-billing/filter-batch', // Replace with your route URL
+        url: '/service-billing/filter-batch', 
         data: {'Product': product } ,
         dataType: "json",
         headers: {
-            'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+            'X-CSRF-TOKEN': token 
         },
         success: function(response) {
             var data = "";
@@ -553,7 +553,7 @@ $.ajax({
 
         },
         error: function(error) {
-            // Handle error
+            
 
         }
     });
@@ -569,11 +569,11 @@ var token = $('#token').val();
 
 $.ajax({
         method: 'POST',
-        url: '/service-billing/batch-details', // Replace with your route URL
+        url: '/service-billing/batch-details', 
         data: {'Batch': batch } ,
         dataType: "json",
         headers: {
-            'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+            'X-CSRF-TOKEN': token 
         },
         success: function(response) {
 
@@ -582,7 +582,7 @@ $.ajax({
             overallCost();
         },
         error: function(error) {
-            // Handle error
+            
 
         }
     });
@@ -657,11 +657,11 @@ var token = $('#token').val();
 
 $.ajax({
      method: 'POST',
-     url: '/service-billing/patient-dues', // Replace with your route URL
+     url: '/service-billing/patient-dues', 
      data: {'Patient': patient } ,
      dataType: "json",
      headers: {
-         'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+         'X-CSRF-TOKEN': token 
      },
      success: function(response) {
          console.log(response);
@@ -669,8 +669,8 @@ $.ajax({
             if (response.due_bills && response.due_bills.length > 0) {
                 response.due_bills.forEach(due => {
                     var dueData = "<table class='table-details' style='width:100%'><tbody><tr><td>"+due.invoice_no+"<br/><span class='f-14'>"+due.date+"</span></td>";
-                    dueData += "<td>"+due.due_amount+"</td>";
-                    dueData += "<td class='text-end'><a data-bs-toggle='modal' data-bs-target='#repayModal' data-invoice='"+due.invoice_no+"' data-due='"+due.due_amount+"' class='view-btn pay'>Pay</a></td></tr></tbody></table>";
+                    dueData += "<td class='text-end'>"+due.due_amount.toFixed(2)+"</td>";
+                    dueData += "</tr></tbody></table>";
                     data += dueData;
                 });
                 $('#due_bills').html(data);
@@ -683,7 +683,7 @@ $.ajax({
 
      },
      error: function(error) {
-         // Handle error
+         
 
      }
  });
@@ -699,11 +699,11 @@ $.ajax({
 
     $.ajax({
             method: 'POST',
-            url: '/get-appointments', // Replace with your route URL
+            url: '/get-appointments', 
             data: {'Patient': patient } ,
             dataType: "json",
             headers: {
-                'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+                'X-CSRF-TOKEN': token 
             },
             success: function(response) {
                 console.log(response);
@@ -721,7 +721,7 @@ $.ajax({
 
             },
             error: function(error) {
-                // Handle error
+                
 
             }
         });
@@ -737,20 +737,21 @@ $.ajax({
 
     $.ajax({
             method: 'POST',
-            url: '/get-creditlimit', // Replace with your route URL
+            url: '/get-creditlimit', 
             data: {'Patient': patient } ,
             dataType: "json",
             headers: {
-                'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+                'X-CSRF-TOKEN': token 
             },
             success: function(response) {
+                let creditlimit = response.creditlimit.credit_limit ? parseFloat(response.creditlimit.credit_limit).toFixed(2) : 'Not Defined';
                 console.log(response);
-                $('.credit_limit').text('CL: '+response.creditlimit.credit_limit);
+                $('.credit_limit').text('CL: '+ creditlimit);
                 $('.credit_limit').val(response.creditlimit.credit_limit);
 
             },
             error: function(error) {
-                // Handle error
+                
 
             }
         });

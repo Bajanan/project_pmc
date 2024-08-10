@@ -346,11 +346,11 @@
 
     $.ajax({
 				method: 'POST',
-				url: '/appointments/availability', // Replace with your route URL
+				url: '/appointments/availability', 
 				data: form_data ,
 				dataType: "json",
 				headers: {
-					'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+					'X-CSRF-TOKEN': token 
 				},
 				success: function(response) {
 					console.log(response);
@@ -414,7 +414,7 @@
 
 				},
 				error: function(error) {
-					// Handle error
+					
 
 				}
 			});
@@ -434,11 +434,11 @@
 
         $.ajax({
 				method: 'POST',
-				url: '/appointments/reschedule', // Replace with your route URL
+				url: '/appointments/reschedule', 
 				data: {'Doctor':doctor,'Shift':shift,'Date':date,'newTime':new_time,'newDate':new_date,'newShift':new_shift},
 				dataType: "json",
 				headers: {
-					'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+					'X-CSRF-TOKEN': token 
 				},
 				success: function(response) {
                     $('#rescheduleModal').modal('hide');
@@ -447,7 +447,7 @@
 
 				},
 				error: function(error) {
-					// Handle error
+					
 
 				}
 			});
@@ -464,11 +464,11 @@
 
         $.ajax({
 				method: 'POST',
-				url: '/appointments/cancel-schedule', // Replace with your route URL
+				url: '/appointments/cancel-schedule', 
 				data: {'Doctor':doctor,'Shift':shift,'Date':date},
 				dataType: "json",
 				headers: {
-					'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+					'X-CSRF-TOKEN': token 
 				},
 				success: function(response) {
                     $('#rescheduleModal').modal('hide');
@@ -477,7 +477,7 @@
 
 				},
 				error: function(error) {
-					// Handle error
+					
 
 				}
 			});
@@ -491,11 +491,11 @@
 
         $.ajax({
 				method: 'POST',
-				url: '/appointments/add-patient', // Replace with your route URL
+				url: '/appointments/add-patient', 
 				data: form_data ,
 				dataType: "json",
 				headers: {
-					'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+					'X-CSRF-TOKEN': token 
 				},
 				success: function(response) {
                     $('#addModal').modal('hide');
@@ -506,7 +506,7 @@
 
 				},
 				error: function(error) {
-					// Handle error
+					
 
 				}
 			});

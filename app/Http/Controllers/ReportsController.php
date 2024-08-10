@@ -300,41 +300,4 @@ class ReportsController extends Controller
              $brands
         );
     }
-
-    public function combinedReport(Request $request)
-    {
-        $start_date = $request->input('start_date', date('Y-m-d'));
-        $end_date = $request->input('end_date', date('Y-m-d'));
-
-        $repayments = Repayments::with('patient')
-        ->whereBetween('date', [$start_date, $end_date])
-        ->get()
-        ->map(function ($repayment) {
-            return [
-                'created_at' => $repayment->created_at,
-                'invoice_no' => null,
-                'patient_name' => $repayment->patient ? $repayment->patient->name : 'N/A',
-                'patient_reg_no' => $repayment->patient ? $repayment->patient->reg_no : 'N/A',
-                'amount' => $repayment->paid_amount,
-                'due_amount' => 0
-            ];
-        });
-
-        // Fetch invoices
-        $invoices = Bill::select('created_at', 'date', DB::raw('NULL as patient_id'), 'payable_amount as amount', 'due_amount', 'invoice_no')
-        ->whereBetween('date', [$start_date, $end_date])
-        ->get();
-
-
-        // Combine both collections and sort by created_at desc
-        $combined = $repayments->concat($invoices);
-
-        $combined = $combined->sortByDesc('created_at')->values();
-
-        $total_sales = $invoices->sum('amount') + $repayments->sum('amount');
-
-        $total_due = $invoices->sum('due_amount');
-
-        return view('reports.accounts', compact('combined', 'start_date', 'end_date', 'total_sales', 'total_due'));
-    }
 }

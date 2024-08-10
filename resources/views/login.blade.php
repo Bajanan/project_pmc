@@ -8,7 +8,7 @@
                     <div class="login-card">
 
                         <div class="text-center">
-                            <img src="{{ asset('uploads/1710228517.png') }}" width="80px" class="pb-3" alt="UTIC" />
+                            <img src="{{ asset('uploads/1721746180.png') }}" width="80px" class="pb-3" alt="UTIC" />
                             <h4 class="headingH3-norm p-b-32">Login to PMC Online</h4>
                         </div>
 

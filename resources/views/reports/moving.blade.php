@@ -213,11 +213,11 @@ function filterBatch(){
 
      $.ajax({
 				method: 'POST',
-				url: '/report/filter-batch', // Replace with your route URL
+				url: '/report/filter-batch', 
 				data: {'Product':product},
 				dataType: "json",
 				headers: {
-					'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+					'X-CSRF-TOKEN': token 
 				},
 				success: function(response) {
 					var data = "";
@@ -231,7 +231,7 @@ function filterBatch(){
 
 				},
 				error: function(error) {
-					// Handle error
+					
 
 				}
 			});

@@ -205,11 +205,11 @@
 
         $.ajax({
 				method: 'POST',
-				url: '/products/filter-brands', // Replace with your route URL
+				url: '/products/filter-brands', 
 				data: {'Supplier':supplier},
 				dataType: "json",
 				headers: {
-					'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+					'X-CSRF-TOKEN': token 
 				},
 				success: function(response) {
                     var data = "";
@@ -225,7 +225,7 @@
 
 				},
 				error: function(error) {
-					// Handle error
+					
 
 				}
 			});

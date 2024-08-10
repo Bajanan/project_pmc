@@ -156,9 +156,6 @@
             <a href="{{ route('reports.sales') }}" class="d1">
                 <li class="p-b-40">Sales</li>
             </a>
-            <a href="{{ route('reports.accounts') }}" class="d1">
-                <li class="p-b-40">Accounts</li>
-            </a>
             <a href="/itemsales-report" class="d1">
                 <li class="p-b-40">Item Sales</li>
             </a>

@@ -63,36 +63,7 @@
                         </div>
                         </form>
                     </div>
-                    <div class="col-lg-5">
-                    @if(Auth::check() && Auth::user()->user_role !== 'Staff')
-                        <div class="row align-item-center">
-                        <div class="col-lg-12" id="service_section" style="display: none;">
-                            <form action="{{ route('invoices.refund') }}" method="POST" onsubmit="return confirm('Are you sure? This action cannot be undone.')">
-                                    @csrf
-                                    <input type="hidden" name="invoice_id" value="{{ $invoice->id }}">
-                                    <input type="hidden" name="appointment_id" value="{{ $invoice->doctor_id }}">
-
-                                    <select class="form-select3" style="height: 60px;" name="service_id" id="service_list" required>
-                                        <option value="" selected disabled hidden>Select a Service to</option>
-                                    </select>
-                                    <button type="submit" class="w-100 px-0 main-button rounded-0 bg-dark d1">Refund</button>
-
-                            </form>
-                        </div>
-                        @if (is_null($invoice->doctor_id))
-                        <div class="col-lg-12 pt-5 d-flex flex-column">
-                            <p class="mb-4 w-50 me-3">Are you sure you want to cancel the bill? This action cannot be undone.</p>
-                            <form action="{{ route('invoices.cancel') }}" method="POST" onsubmit="return confirm('Are you sure? This action cannot be undone.')">
-                                    @csrf
-                                    <input type="hidden" name="invoice_id" value="{{ $invoice->id }}">
-                                    <button type="submit" class="w-50 px-0 main-button rounded-0 bg-dark d1">Cancel Bill</button>
-                            </form>
-                        </div>
-                        @endif
-
-                        </div>
-                        @endif
-                    </div>
+                    
                 </div>
             <!-- Page content end -->
         </div>

@@ -144,7 +144,7 @@ class BillsController extends Controller
             'updated_at' => now()
         ]);
 
-        $path = 'uploads/1710228517.png';
+        $path = 'uploads/1721746180.png';
         $type = pathinfo($path, PATHINFO_EXTENSION);
         $data = file_get_contents($path);
         $logo = 'data:image/' . $type . ';base64,' . base64_encode($data);
@@ -395,7 +395,7 @@ class BillsController extends Controller
     if ($bill) {
         // Update the status of the bill
 
-        $path = 'uploads/1710228517.png';
+        $path = 'uploads/1721746180.png';
         $type = pathinfo($path, PATHINFO_EXTENSION);
         $data = file_get_contents($path);
         $logo = 'data:image/' . $type . ';base64,' . base64_encode($data);

@@ -119,7 +119,6 @@ Route::middleware('auth')->group(function () {
      //reports
      Route::post('report/appointment' , [ReportsController::class,'appointments'])->name('reports.appointments');
      Route::get('report/create-appointment' , [ReportsController::class,'createAppointments'])->name('reports.create-appointment');
-     Route::get('report/accounts' , [ReportsController::class,'combinedReport'])->name('reports.accounts');
      Route::get('report/sales' , [ReportsController::class,'sales'])->name('reports.sales');
      Route::get('report/sales/invoice/{id}' , [ReportsController::class,'salesInvoice'])->name('reports.sales.invoice');
      Route::post('report/item-sales' , [ReportsController::class,'itemSales'])->name('reports.item-sales');
@@ -151,7 +150,6 @@ Route::post('/bills/refund', [BillsController::class, 'refundService'])->name('i
 //reports
 Route::view('/appointment-report', 'reports.appointment');
 Route::view('/sales-report', 'reports.sales');
-Route::view('/accounts', 'reports.accounts');
 Route::view('/itemsales-report', 'reports.itemsale');
 Route::view('/due-report', 'reports.due');
 Route::view('/stock-report', 'reports.stock');

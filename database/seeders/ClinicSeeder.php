@@ -20,7 +20,7 @@ class ClinicSeeder extends Seeder
             'mobile' => "0712345678",
             'bill_message' => "Thank you for visiting us!",
             'clinic_address'=>"Atchuveli, Jaffna",
-            'clinic_logo'=> url('uploads/1710228517.png') 
+            'clinic_logo'=> url('uploads/1721746180.png') 
         ]);
     }
 }

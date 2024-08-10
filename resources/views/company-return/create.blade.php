@@ -171,11 +171,11 @@ var token = $('#token').val();
 
 $.ajax({
         method: 'POST',
-        url: '/crn/filter-products', // Replace with your route URL
+        url: '/crn/filter-products', 
         data: {'Supplier': supplier } ,
         dataType: "json",
         headers: {
-            'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+            'X-CSRF-TOKEN': token 
         },
         success: function(response) {
            var data = "";
@@ -188,7 +188,7 @@ $.ajax({
 
         },
         error: function(error) {
-            // Handle error
+            
 
         }
     });
@@ -205,11 +205,11 @@ var token = $('#token').val();
 
 $.ajax({
         method: 'POST',
-        url: '/crn/filter-batches', // Replace with your route URL
+        url: '/crn/filter-batches', 
         data: {'Product': product } ,
         dataType: "json",
         headers: {
-            'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+            'X-CSRF-TOKEN': token 
         },
         success: function(response) {
             console.log(response);
@@ -225,7 +225,7 @@ $.ajax({
 
         },
         error: function(error) {
-            // Handle error
+            
 
         }
     });
@@ -242,11 +242,11 @@ var token = $('#token').val();
 
 $.ajax({
         method: 'POST',
-        url: '/crn/batch-details', // Replace with your route URL
+        url: '/crn/batch-details', 
         data: {'Batch': batch } ,
         dataType: "json",
         headers: {
-            'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+            'X-CSRF-TOKEN': token 
         },
         success: function(response) {
 
@@ -260,7 +260,7 @@ $.ajax({
 
         },
         error: function(error) {
-            // Handle error
+            
 
         }
     });

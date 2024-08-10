@@ -291,11 +291,11 @@
 
             $.ajax({
 				method: 'POST',
-				url: '/grn/product-units', // Replace with your route URL
+				url: '/grn/product-units', 
 				data: {'Product': product } ,
 				dataType: "json",
 				headers: {
-					'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+					'X-CSRF-TOKEN': token 
 				},
 				success: function(response) {
 
@@ -308,7 +308,7 @@
 
 				},
 				error: function(error) {
-					// Handle error
+					
 
 				}
             });
@@ -360,11 +360,11 @@ function saveBatch(){
     var token = $('#token').val();
      $.ajax({
 				method: 'POST',
-				url: '/batch/add', // Replace with your route URL
+				url: '/batch/add', 
 				data: {'Batch': batch,'Product':product_id} ,
 				dataType: "json",
 				headers: {
-					'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+					'X-CSRF-TOKEN': token 
 				},
 				success: function(response) {
                     var row = $('#addModal').data('caller-row');
@@ -383,7 +383,7 @@ function saveBatch(){
 
 				},
 				error: function(error) {
-					// Handle error
+					
 
 				}
             });
@@ -402,11 +402,11 @@ function saveBatch(){
 
     $.ajax({
         method: 'POST',
-        url: '/grn/filter-batches', // Replace with your route URL
+        url: '/grn/filter-batches', 
         data: {'Product': product } ,
         dataType: "json",
         headers: {
-            'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+            'X-CSRF-TOKEN': token 
         },
         success: function(response) {
             console.log(response);
@@ -421,7 +421,7 @@ function saveBatch(){
 
         },
         error: function(error) {
-            // Handle error
+            
 
         }
     });
@@ -437,11 +437,11 @@ function batchDetails(v){
 
     $.ajax({
             method: 'POST',
-            url: '/grn/batch-details', // Replace with your route URL
+            url: '/grn/batch-details', 
             data: {'Batch': batch } ,
             dataType: "json",
             headers: {
-                'X-CSRF-TOKEN': token // Use the CSRF token from your layout or view
+                'X-CSRF-TOKEN': token 
             },
             success: function(response) {
 
@@ -454,7 +454,7 @@ function batchDetails(v){
 
             },
             error: function(error) {
-                // Handle error
+                
 
             }
         });
