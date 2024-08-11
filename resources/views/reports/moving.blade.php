@@ -135,6 +135,33 @@
 
 @push('js')
 <script>
+
+    $(function() {
+
+        var start = moment().startOf('month');
+    var end = moment().endOf('month');
+
+    function cb(start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        $('#startDateInput').val(start.format('YYYY-MM-DD'));
+        $('#endDateInput').val(end.format('YYYY-MM-DD'));
+    }
+
+    $('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+            'This Month': [moment().startOf('month'), moment().endOf('month')]
+        },
+        locale: {
+            format: 'MMMM D, YYYY'
+        }
+    }, cb);
+
+    cb(start, end);
+
+    });
+
     $(document).ready(function() {
             var table = $('#searchtbl').DataTable({
                 "language": {

@@ -327,6 +327,9 @@ class PharmacyBillsController extends Controller
                             window.onload = function(){
                                 window.print();
                             }
+                            window.onafterprint = function(){
+                                window.location.href = "'.route('pharmacy-bill.create').'";
+                            };
                         </script>
                         </head>
                         <body>

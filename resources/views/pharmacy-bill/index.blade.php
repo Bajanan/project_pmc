@@ -282,49 +282,6 @@
         </div>
     </div>
 
-    <!-- add Loan Pay box -->
-    <div class="modal fade" id="repayModal" tabindex="-1" aria-labelledby="repayLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <h4 class="headingH3 text-center p-b-24">Repay</h4>
-                    <form action="{{ route('repayments.store') }}" method="post">
-                        @csrf
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="pb-3">
-                                        <p class="form-label">Balance Amount</p>
-                                        <input type="text"
-                                            class="form-control form-text {{ $errors->has('company_name') ? 'is-invalid' : '' }}"
-                                            name="company_name" id="balance_amount" value="" readonly>
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('company_name') }}</strong>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="pb-3">
-                                        <p class="form-label">Amount Paid</p>
-                                        <input type="text" placeholder="Enter paid amount"
-                                            class="form-control form-text border-green {{ $errors->has('company_name') ? 'is-invalid' : '' }}"
-                                            name="paid_amount" id="paid_amount" value="0" required>
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('company_name') }}</strong>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="pb-3 pt-3">
-                                        <input type="hidden" name="invoice_no" id="invoice_no">
-                                        <button type="submit" class="main-button d1 a1-bg">Pay</button>
-                                    </div>
-                                </div>
-                            </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
 @endsection
 
@@ -660,5 +617,9 @@ $.ajax({
             }
         });
     });
+
+    function clearFormData() {
+        window.location.reload();
+    }
 
 </script>
