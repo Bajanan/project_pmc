@@ -21,7 +21,7 @@
 
         <!-- Activities -->
         <li class="p-b-40 main-link">
-            <a href="/appointment" class="{{ request()->is('appointment') ? 'c1' : 'd1' }} d-flex align-items-center">
+            <a href="/appointments/create" class="{{ request()->is('appointment') ? 'c1' : 'd1' }} d-flex align-items-center">
                 <span class="material-symbols-outlined">
                     calendar_month
                 </span>
